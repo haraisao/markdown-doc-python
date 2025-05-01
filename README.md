@@ -1,4 +1,4 @@
-# GenMarkdown
+# markdown-doc-python
 ## このパッケージについて
 このパッケージは、PythonのプログラムからMarkdown形式の簡易マニュアルを生成することを目的にしています。
 
