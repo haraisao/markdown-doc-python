@@ -1,0 +1,27 @@
+<html>
+<head>
+<!--
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css" />
+-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.8.1/github-markdown.min.css" />
+    <title>{{ title }}</title>
+    <style>
+    body {
+        margin: 2em;
+    }
+    </style>
+</head>
+<body>
+    <h2>MarkdownファイルのPreview</h2>
+    ファイルを選択して、<b>Preview</b>を押下してください。<br>
+    <form action="/preview" method="POST"  enctype="multipart/form-data">
+    <input type="file" name="uploadFiles" ><br>
+    <input type="submit" value="Preview"/>
+    </form>
+    <a href="/">トップ画面へ戻る</a>
+    <hr>
+<article class="markdown-body">
+    {{ data }}
+</article>
+</body>
+</html>

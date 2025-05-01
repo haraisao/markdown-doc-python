@@ -1,0 +1,65 @@
+<html>
+  <head>
+    <title>File List</title>
+   <style>
+   /*
+    .file-tree ul {
+        list-style-type: none;
+        padding-left: 20px;
+    }
+
+    .folder,
+    .file {
+        content: "■";
+        display: inline-block;
+        margin-right: 6px;
+        cursor: pointer;
+    }
+
+    .folder:before {
+        content: "▶";
+        display: inline-block;
+        margin-right: 6px;
+    }
+
+    .folder.open:before {
+        content: "▼";
+    }
+    */
+   </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const folders = document.querySelectorAll('.folder');
+
+            for (let i = 0; i < folders.length; i++) {
+                folders[i].addEventListener('click', function () {
+                    this.classList.toggle('open');
+                    let ul = this.nextElementSibling;
+                    if (ul) {
+                        ul.style.display = ul.style.display === 'none' ? 'block' : 'none';
+                    }
+                });
+                let ul = folders[i].nextElementSibling;
+                if (ul) {
+                    ul.style.display = 'none';
+                }
+            }
+        });
+    </script>
+  </head>
+  <body>
+    <h2>Markdown ファイル一覧</h2>
+<div class="file-tree">
+    {{ file_list }}
+</div>
+  <hr>
+  <ul>
+    <li><a href="/preview">Markdown ファイルのプレビュー</a></li>
+  </ul>
+  <hr>
+  <form action="/upload_image" method="POST" enctype="multipart/form-data">
+  イメージファイル名：<input type="file" name="uploadFiles" multiple="multiple" /><br>
+   <input type="submit" value="Upload" />
+   </form>
+  </body>
+</html>
